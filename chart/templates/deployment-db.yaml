@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: db
+  template:
+    metadata:
+      labels:
+        app: db
+    spec:
+      containers:
+      - name: db
+        image: "{{ .Values.db.image }}"
+        ports:
+        - containerPort: 5432
+        env:
+        - name: POSTGRES_DB
+          value: "rekordbox"
+        - name: POSTGRES_USER
+          value: "rekordboxuser"
+        - name: POSTGRES_PASSWORD
+          value: "{{ .Values.db.password }}"

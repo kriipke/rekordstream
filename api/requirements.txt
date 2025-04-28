@@ -1,0 +1,8 @@
+flask-cors
+Flask
+requests
+SQLAlchemy
+psycopg2-binary
+pika
+pyrekordbox
+

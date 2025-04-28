@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: worker
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: worker
+  template:
+    metadata:
+      labels:
+        app: worker
+    spec:
+      containers:
+      - name: worker
+        image: "{{ .Values.workerImage.repository }}:{{ .Values.workerImage.tag }}"
+        env:
+        - name: RABBITMQ_HOST
+          value: "rabbitmq"
+        - name: POSTGRES_HOST
+          value: "db"
+        - name: POSTGRES_DB
+          value: "rekordbox"
+        - name: POSTGRES_USER
+          value: "rekordboxuser"
+        - name: POSTGRES_PASSWORD
+          value: "{{ .Values.db.password }}"

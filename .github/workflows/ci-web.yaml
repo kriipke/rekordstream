@@ -1,0 +1,27 @@
+name: Container Build - API
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'frontend/*.py'
+      - 'frontend/Dockerfile'
+      - '.github/workflows/ci-web.yaml'
+      - './.github/workflows/docker-build-publish.yaml'
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+  attestations: write
+  id-token: write
+
+jobs:
+  build-api:
+    uses: ./.github/workflows/docker-build-publish.yaml
+    with:
+      context: ./frontend/
+      dockerfile: ./Dockerfile
+      image-name: api

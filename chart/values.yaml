@@ -1,0 +1,24 @@
+image:
+  repository: your-dockerhub-username/rekordboxd-api
+  tag: latest
+
+frontendImage:
+  repository: your-dockerhub-username/rekordboxd-frontend
+  tag: latest
+
+workerImage:
+  repository: your-dockerhub-username/rekordboxd-worker
+  tag: latest
+
+rabbitmq:
+  image: rabbitmq:3-management
+
+db:
+  image: postgres:14
+  password: supersecret
+
+spotify:
+  clientId: ""
+  clientSecret: ""
+  redirectUri: "http://localhost:3001/callback"
+

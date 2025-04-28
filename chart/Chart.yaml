@@ -1,0 +1,6 @@
+apiVersion: v2
+name: rekordboxd
+description: Rekordbox XML to Spotify playlist sync microservices app
+version: 0.1.0
+appVersion: "1.0.0"
+
