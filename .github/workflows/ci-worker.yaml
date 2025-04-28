@@ -1,0 +1,27 @@
+name: CI - Worker
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'worker/*.py'
+      - 'worker/Dockerfile'
+      - '.github/workflows/ci-worker.yaml'
+      - './.github/workflows/docker-build-publish.yaml'
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+  attestations: write
+  id-token: write
+
+jobs:
+  build-api:
+    uses: ./.github/workflows/docker-build-publish.yaml
+    with:
+      context: ./worker/
+      dockerfile: ./Dockerfile
+      image-name: worker
