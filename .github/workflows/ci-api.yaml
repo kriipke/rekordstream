@@ -1,4 +1,4 @@
-name: Container Build - API
+name: CI - API
 
 on:
   push:

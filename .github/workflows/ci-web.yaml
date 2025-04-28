@@ -1,4 +1,4 @@
-name: Container Build - API
+name: CI - Web
 
 on:
   push:
@@ -24,4 +24,4 @@ jobs:
     with:
       context: ./frontend/
       dockerfile: ./Dockerfile
-      image-name: api
+      image-name: web
