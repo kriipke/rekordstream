@@ -6,7 +6,7 @@ function App() {
   const [loading, setLoading] = useState(false);
 
   const handleLogin = () => {
-    window.location.href = `${process.env.REACT_APP_API_URL}/login`;
+    window.location.href = `${process.env.REACT_APP_API_URL}/app/login`;
   };
 
   const handleUpload = async () => {
@@ -19,7 +19,7 @@ function App() {
     formData.append("file", file);
 
     try {
-      const res = await fetch(`${process.env.REACT_APP_API_URL}/upload`, {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/app/upload`, {
         method: "POST",
         body: formData,
         credentials: "include", // very important
