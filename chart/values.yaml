@@ -1,13 +1,13 @@
 image:
-  repository: your-dockerhub-username/rekordboxd-api
+  repository: ghcr.io/kriipke/rekordstream/api
   tag: latest
 
 frontendImage:
-  repository: your-dockerhub-username/rekordboxd-frontend
+  repository: ghcr.io/kriipke/rekordstream/web
   tag: latest
 
 workerImage:
-  repository: your-dockerhub-username/rekordboxd-worker
+  repository: ghcr.io/kriipke/rekordstream/worker
   tag: latest
 
 rabbitmq:
