@@ -18,7 +18,7 @@ db:
   password: supersecret
 
 spotify:
-  clientId: "10420fcac7ef4bc9af74af9b8b5278ef"
-  clientSecret: "f57a4b1328a444a5b303682109026c6c"
+  clientId: ""
+  clientSecret: ""
   redirectUri: "http://localhost:3001/callback"
 
